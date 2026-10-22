@@ -1,0 +1,7 @@
+Use case: ads-marketing. Create a refined wide 16:9 GitHub repository cover banner for an existing clinical-trial matching research project, LANA 4.0. This is a typographic brand graphic, not a UI mockup. Dark midnight navy background with a delicate teal graph of evidence nodes on the right. Minimal, editorial, generous negative space, crisp large English typography. White/cream title, restrained mint accents, a small elegant bronze award pill. Exact text, all must be readable:
+"LANA 4.0"
+"Local AI for Clinical Trial Matching"
+"Evidence-linked pre-screening. Designed for hospital-controlled deployment."
+"3rd Place"
+"Siriraj × MIT Hacking Medicine 2026"
+Use only those exact words, no additional words, badges, percentages or claims. Main title left, subtle node network right, award lower left. No hospital/patient photographs, no invented product screenshots, no medical crosses, no university/organizer logos, no third-party trademarks, no official seal. The award text is supplied by the project team, not a certificate. Do not imply clinical effectiveness or official endorsement. Aim for clean professional open-source software cover design.

@@ -1,0 +1,110 @@
+{
+  "actual_model_forward_calls": 2660,
+  "adjusted_bounds_positive": true,
+  "intervals": [
+    {
+      "adjusted_ci": [
+        0.22654806271823796,
+        0.3576597363083166
+      ],
+      "comparator": "gpt-6-luna",
+      "lower_above_zero": true,
+      "metric": "accuracy"
+    },
+    {
+      "adjusted_ci": [
+        0.3584016145839761,
+        0.49995281095723965
+      ],
+      "comparator": "gpt-6-luna",
+      "lower_above_zero": true,
+      "metric": "macro_f1"
+    },
+    {
+      "adjusted_ci": [
+        0.16641901931649328,
+        0.30634521954597616
+      ],
+      "comparator": "gpt-5.6-terra",
+      "lower_above_zero": true,
+      "metric": "accuracy"
+    },
+    {
+      "adjusted_ci": [
+        0.24619286204014462,
+        0.3951540066727427
+      ],
+      "comparator": "gpt-5.6-terra",
+      "lower_above_zero": true,
+      "metric": "macro_f1"
+    }
+  ],
+  "models": [
+    {
+      "accuracy": 0.6646616541353384,
+      "cost_per1000": 0.015889052285565024,
+      "cost_scope": "GPU electricity only \u00b7 four uncached views",
+      "eligible_precision": 0.7384615384615385,
+      "eligible_recall": 0.41379310344827586,
+      "false_eligible": 34,
+      "macro_f1": 0.6552446415283941,
+      "name": "LANA 4B pipeline",
+      "noneligible_support": 433,
+      "system": "LANA"
+    },
+    {
+      "accuracy": 0.3699248120300752,
+      "cost_per1000": 0.18817872180451123,
+      "cost_scope": "Recorded hosted API usage estimate",
+      "eligible_precision": 0.8,
+      "eligible_recall": 0.017241379310344827,
+      "false_eligible": 1,
+      "macro_f1": 0.223220034943726,
+      "name": "GPT-6 Luna",
+      "noneligible_support": 433,
+      "system": "gpt-6-luna"
+    },
+    {
+      "accuracy": 0.4270676691729323,
+      "cost_per1000": 3.078347368421058,
+      "cost_scope": "Recorded hosted API usage estimate",
+      "eligible_precision": 0.5714285714285714,
+      "eligible_recall": 0.017241379310344827,
+      "false_eligible": 3,
+      "macro_f1": 0.3344453435880676,
+      "name": "GPT-5.6 Terra",
+      "noneligible_support": 433,
+      "system": "gpt-5.6-terra"
+    }
+  ],
+  "n": 665,
+  "original_adapter": {
+    "accuracy": 0.6571428571428571,
+    "eligible_precision": 0.6424581005586593,
+    "eligible_recall": 0.4956896551724138,
+    "excluded_to_eligible": 51,
+    "false_eligible_rate": 0.14780600461893764,
+    "ineligible_to_eligible": 64,
+    "invalid_outputs": 0,
+    "macro_f1": 0.6526319865763411,
+    "n": 665,
+    "noneligible_pairs": 433
+  },
+  "patients": 29,
+  "point_wins": true,
+  "qualification": "Singlefrozen selectedpipeline; complete665humanjudged pairs from29syntheticquestionnaireprofiles. Classstratified contextqualified researchchallenge, not populationclinicalaccuracy, fullcorpusretrieval, colorectalvalidation, equalcompute foundationmodelcomparison, outcomeRL or whole-serviceOPEX. Extraarms/sourceablations descriptive, not readout/candidate selection. Eighttemplatecluster analysis is a sensitivity check, not an additional independent confirmation.",
+  "source_ablation": {
+    "accuracy": 0.6646616541353384,
+    "eligible_precision": 0.7384615384615385,
+    "eligible_recall": 0.41379310344827586,
+    "excluded_to_eligible": 26,
+    "false_eligible_rate": 0.07852193995381063,
+    "ineligible_to_eligible": 34,
+    "invalid_outputs": 0,
+    "macro_f1": 0.6552446415283941,
+    "n": 665,
+    "noneligible_pairs": 433
+  },
+  "telemetry_coverage": 1.0,
+  "whole_service_opex_measured": false
+}

@@ -1,0 +1,16 @@
+flowchart LR
+  subgraph H["Target hospital-controlled boundary · proposed services"]
+    I["IRIS for Health<br/>FHIR / SQL · provenance · local vector index"]
+    A["LANA bounded agent / FastAPI<br/>Retrieve, assess, verify, request data"]
+    C["Clinical review<br/>Evidence + missingness + protocol coverage"]
+    M["Local MedGemma 1.5 4B<br/>Isolated benchmark: Transformers / NF4 / QLoRA<br/>Serving API planned; vLLM compatibility unverified"]
+    L["Laya · optional shadow check<br/>Integration / added value untested"]
+    O["Langfuse · target self-hosted observability"]
+    I --> A --> C
+    A -. Planned inference service .-> M
+    A -. Planned shadow check .-> L
+    A -. Planned metadata traces .-> O
+  end
+  C -. Approved clinical release .-> S["Trial Site<br/>Confirms final eligibility"]
+  I -. Governed aggregate disclosure .-> G["Hospital approval gate"]
+  G -. Approved aggregates only .-> SP["Sponsor / CRO"]

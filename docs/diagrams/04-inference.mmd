@@ -1,0 +1,15 @@
+flowchart LR
+  subgraph H["Proposed hospital-local inference path"]
+    A["FastAPI<br/>Authorise purpose and patient access<br/>Freeze evidence snapshot"]
+    R["InterSystems IRIS<br/>SQL facts, scoped Vector Search<br/>Source spans + reviewed criterion"]
+    P["LANA prompt builder<br/>Criterion + evidence IDs<br/>Bound context and output tokens"]
+    M["Local MedGemma / proposed vLLM endpoint<br/>Pinned weights + tokenizer"]
+    V["Validator + exact rules<br/>Schema, citations, units and dates"]
+    C["Clinician review<br/>Met / Not met / Unknown"]
+    L["Laya<br/>Optional evidence shadow check"]
+    O["Langfuse<br/>Self-hosted sanitised traces"]
+    A --> R --> P --> M --> V --> C
+    L -. Flags .-> C
+    M -. Metadata .-> O
+  end
+  N["Proposed serving path. Current isolated benchmark uses Transformers/NF4."]

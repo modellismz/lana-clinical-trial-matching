@@ -1,0 +1,14 @@
+flowchart LR
+  subgraph H["Target hospital-controlled deployment · proposed"]
+    P["Patient evidence<br/>Age, gender, comorbidities, ECOG, geography<br/>CBC, liver / renal tests, dates / units<br/>p/cTNM, metastases / brain metastases<br/>KRAS, BRAF, EGFR, MSI/MMR<br/>Surgery, R0/R1, prior / failed treatments"]
+    T["Versioned trial snapshots<br/>Inclusion / exclusion criteria<br/>Cohorts, sites, recruitment status"]
+    I["InterSystems IRIS for Health<br/>Standardise · source / date · scoped retrieval"]
+    L["LANA matching engine<br/>Local MedGemma 1.5 4B<br/>Evidence-linked criterion assessment"]
+    R["Met / Not met / Unknown<br/>Missing data + potential trials"]
+    C["Clinical review → referral draft<br/>Trial Site confirms final eligibility"]
+    P --> I
+    T --> I
+    I --> L --> R --> C
+    C -. Planned follow-up .-> F["Observed referral / screening / enrolment outcomes"]
+    F -. Self-evaluation + reviewed offline RL .-> L
+  end

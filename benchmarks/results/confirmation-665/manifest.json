@@ -1,0 +1,20 @@
+{
+  "n": 665,
+  "profiles": 29,
+  "trials": 650,
+  "templates": 8,
+  "labels": {
+    "0": "nonrelevant",
+    "1": "excluded",
+    "2": "eligible",
+    "-1": "invalid"
+  },
+  "prediction_file": "predictions.jsonl",
+  "sha256": "51935c848cbcc0ddc7c05536b9fdc0b2eb301eed1f38d8390e57fa271bf6a818",
+  "source": "Official public TREC Clinical Trials 2023 human judgments and synthetic questionnaire profiles",
+  "contains_clinical_narratives": false,
+  "sealed_predictions_source_sha256": "cb0d44d62f3fa373dc800a2e541472715323523ccdf0804d86fded6938277184",
+  "original_label_sha256": "863af9a399873eb6a1cbf9adb669a3dcff77196a70559c6d0874da604aeb865d",
+  "audit_source_sha256": "1c3d361b84ac885910f60b33a4cac2b6d0237a7b54c5a15a6c342302af257d4d",
+  "note": "Post-evaluation publication join of all sealed predictions and gold labels, for metric replay. This file must never be used as an optimization split."
+}

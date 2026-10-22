@@ -1,0 +1,33 @@
+name: Repository checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check links, approved assets and source manifests
+        run: python scripts/check_repository.py
+      - name: Replay frozen scores and paired bootstrap
+        run: python benchmarks/replay.py --bootstrap
+      - name: Install rule-test dependency
+        run: python -m pip install pytest
+      - name: Test the prototype rule evaluator
+        working-directory: apps/platform
+        run: python -m pytest -q tests
+      - name: Check browser/Python exported-criterion parity
+        working-directory: apps/platform
+        run: node tests/parity.mjs

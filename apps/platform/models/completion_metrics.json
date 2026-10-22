@@ -1,0 +1,79 @@
+{
+ "data": "8435 real colorectal patients from cBioPortal (MSK 2017/2026, SYSUCC 2022, TCGA)",
+ "folds": 5,
+ "targets": {
+  "msi": {
+   "positive_class": "msi_high",
+   "n": 7804,
+   "prevalence": 0.1185,
+   "auroc": 0.993,
+   "average_precision": 0.966,
+   "brier": 0.0135,
+   "brier_prevalence_baseline": 0.1045
+  },
+  "her2": {
+   "positive_class": "amplified",
+   "n": 8435,
+   "prevalence": 0.0273,
+   "auroc": 0.682,
+   "average_precision": 0.048,
+   "brier": 0.0263,
+   "brier_prevalence_baseline": 0.0265
+  },
+  "kras": {
+   "positive_class": "mutant",
+   "n": 8435,
+   "prevalence": 0.395,
+   "auroc": 0.769,
+   "average_precision": 0.645,
+   "brier": 0.1878,
+   "brier_prevalence_baseline": 0.239
+  },
+  "nras": {
+   "positive_class": "mutant",
+   "n": 8435,
+   "prevalence": 0.0346,
+   "auroc": 0.79,
+   "average_precision": 0.1,
+   "brier": 0.0321,
+   "brier_prevalence_baseline": 0.0334
+  },
+  "braf": {
+   "positive_class": "mutant",
+   "n": 8435,
+   "prevalence": 0.0724,
+   "auroc": 0.91,
+   "average_precision": 0.497,
+   "brier": 0.0476,
+   "brier_prevalence_baseline": 0.0672
+  },
+  "pik3ca": {
+   "positive_class": "mutant",
+   "n": 8435,
+   "prevalence": 0.1127,
+   "auroc": 0.715,
+   "average_precision": 0.208,
+   "brier": 0.0947,
+   "brier_prevalence_baseline": 0.1
+  }
+ },
+ "kras_variant_share": {
+  "G12D": 0.2968,
+  "G12V": 0.1999,
+  "G13D": 0.1849,
+  "G12C": 0.069,
+  "A146T": 0.0624,
+  "G12S": 0.0453,
+  "G12A": 0.0423,
+  "Q61H": 0.024,
+  "K117N": 0.0114,
+  "A146V": 0.0111,
+  "G12R": 0.0096,
+  "Q61K": 0.0084
+ },
+ "limitations": [
+  "Cohorts are US (MSK, TCGA) and Chinese (SYSUCC); no Thai patients are included.",
+  "Predicts a likely result; it is not a substitute for the test. The platform still marks the criterion Unknown.",
+  "Cross-validation is internal; no external validation cohort."
+ ]
+}

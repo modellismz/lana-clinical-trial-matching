@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+# large, reproducible with `make data embed train` (see README)
+data/raw/
+data/processed/
+data/models/
+# run logs written by make eval / make serve; the exported snapshot is web/data/evaluation.json
+data/eval_runs.jsonl
+data/match_log.jsonl

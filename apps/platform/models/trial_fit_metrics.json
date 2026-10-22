@@ -1,0 +1,49 @@
+{
+ "task": "Is the patient ELIGIBLE for the trial? (TREC label 2 vs 0/1)",
+ "data": "TREC Clinical Trials, patient topics + assessor judgments; train 2021, test 2022 (different topics)",
+ "pool": "Sampled, <=15 pairs per label per topic. Metrics describe ranking within this balanced pool.",
+ "encoder": "BAAI/bge-m3 (1024-d, multilingual)",
+ "model": "HistGradientBoosting, 8 features",
+ "n_train_pairs": 3272,
+ "n_test_pairs": 2150,
+ "n_train_topics": 75,
+ "n_test_topics": 50,
+ "auroc_eligible": 0.741,
+ "average_precision_eligible": 0.547,
+ "auroc_relevant": 0.712,
+ "ranking": {
+  "ndcg@10": 0.69,
+  "p@10_eligible": 0.576
+ },
+ "baselines": {
+  "cosine(topic, trial head)": {
+   "auroc_eligible": 0.645,
+   "ndcg@10": 0.633,
+   "p@10_eligible": 0.482
+  },
+  "cosine(topic, inclusion text)": {
+   "auroc_eligible": 0.61,
+   "ndcg@10": 0.598,
+   "p@10_eligible": 0.466
+  },
+  "random": {
+   "auroc_eligible": 0.5
+  }
+ },
+ "features": [
+  "cos_head",
+  "cos_inc",
+  "cos_exc",
+  "inc_minus_exc",
+  "age_ok",
+  "sex_ok",
+  "token_jaccard",
+  "has_exclusion_text"
+ ],
+ "limitations": [
+  "All-disease benchmark (not colorectal-specific, not Thai).",
+  "Trial text is the current registry version, not the 2021 snapshot the assessors saw.",
+  "Scores are not calibrated probabilities.",
+  "TREC patients are synthetic case descriptions."
+ ]
+}

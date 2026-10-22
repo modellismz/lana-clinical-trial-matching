@@ -1,0 +1,1703 @@
+{
+"generated": "2026-10-18T01:32:59+07:00",
+"window_days": 7,
+"config": {
+"mode": "snapshot",
+"ranked_depth": 12,
+"note": "Exported matches keep the top 12 after re-ranking by rules and both models, so this mode scores the final top 12, not the raw shortlist. Run without --snapshot (needs data/processed + IRIS) for the raw 40-trial shortlist and the 700-chunk pool.",
+"encoder": "BAAI/bge-m3 (1024-d, multilingual)",
+"dim": 1024,
+"n_chunks": 32701,
+"n_trials": 1073,
+"pool_chunks": 700,
+"shortlist": 40,
+"query_max_len": 256,
+"store": "InterSystems IRIS · VECTOR_COSINE"
+},
+"golden": {
+"layers": [
+{
+"id": "AUTO",
+"name": "Title names the biomarker",
+"n_pairs": 275,
+"kind": "derived",
+"note": "KRAS G12C · BRAF V600E · MSI-H/dMMR · HER2 · RAS wild-type in the registry title"
+},
+{
+"id": "RULES",
+"name": "Rules pass over the whole registry",
+"n_pairs": 0,
+"kind": "derived",
+"note": "no Not met · ≥1 biomarker Met · coverage ≥ 0.4 · full mode only"
+},
+{
+"id": "HAND",
+"name": "Reviewer-labelled",
+"n_pairs": 0,
+"kind": "labelled",
+"note": "data/golden/retrieval_golden.jsonl"
+}
+],
+"ks": [
+5,
+12
+],
+"summary": {
+"n_queries": 23,
+"n_pairs": 275,
+"recall@5": 0.035,
+"hit@5": 0.13,
+"recall@12": 0.075,
+"hit@12": 0.435,
+"mrr": 0.139,
+"median_first_rank": 6.0
+},
+"by_subgroup": [
+{
+"n_queries": 3,
+"n_pairs": 24,
+"recall@5": 0.267,
+"hit@5": 1.0,
+"recall@12": 0.208,
+"hit@12": 1.0,
+"mrr": 0.75,
+"median_first_rank": 1,
+"subgroup": "kras_g12c",
+"label": "KRAS G12C",
+"n_patients": 3
+},
+{
+"n_queries": 7,
+"n_pairs": 84,
+"recall@5": 0.0,
+"hit@5": 0.0,
+"recall@12": 0.048,
+"hit@12": 0.286,
+"mrr": 0.042,
+"median_first_rank": 7.0,
+"subgroup": "braf_v600e",
+"label": "BRAF V600E",
+"n_patients": 7
+},
+{
+"n_queries": 1,
+"n_pairs": 23,
+"recall@5": 0.0,
+"hit@5": 0.0,
+"recall@12": 0.0,
+"hit@12": 0.0,
+"mrr": 0.0,
+"median_first_rank": null,
+"subgroup": "msi_h",
+"label": "MSI-H / dMMR",
+"n_patients": 1
+},
+{
+"n_queries": 3,
+"n_pairs": 63,
+"recall@5": 0.0,
+"hit@5": 0.0,
+"recall@12": 0.0,
+"hit@12": 0.0,
+"mrr": 0.0,
+"median_first_rank": null,
+"subgroup": "her2_amp",
+"label": "HER2",
+"n_patients": 3
+},
+{
+"n_queries": 9,
+"n_pairs": 81,
+"recall@5": 0.0,
+"hit@5": 0.0,
+"recall@12": 0.086,
+"hit@12": 0.556,
+"mrr": 0.073,
+"median_first_rank": 7,
+"subgroup": "ras_wt",
+"label": "RAS wild-type",
+"n_patients": 9
+},
+{
+"n_queries": 0,
+"n_pairs": 0,
+"recall@5": null,
+"hit@5": null,
+"recall@12": null,
+"hit@12": null,
+"mrr": null,
+"median_first_rank": null,
+"subgroup": "kras_mut",
+"label": "KRAS other",
+"n_patients": 12
+},
+{
+"n_queries": 0,
+"n_pairs": 0,
+"recall@5": null,
+"hit@5": null,
+"recall@12": null,
+"hit@12": null,
+"mrr": null,
+"median_first_rank": null,
+"subgroup": "mcrc",
+"label": "no actionable biomarker",
+"n_patients": 1
+}
+],
+"hit_source": {
+"inclusion": 14,
+"exclusion": 2
+},
+"no_reference": [
+"LN-0B9E",
+"LN-37D6",
+"LN-A2AF",
+"LN-0C63",
+"LN-F9DC",
+"LN-0021",
+"LN-22C9",
+"LN-0A4E",
+"LN-B067",
+"LN-7E78",
+"LN-DFBE",
+"LN-A980",
+"LN-5D93"
+],
+"violations": [],
+"misses": [
+{
+"nct_id": "NCT05288205",
+"title": "Phase 1/2a Study of JAB-21822 Plus JAB-3312 in Patients With Advanced Solid Tumors Harboring KRAS p.G12C Mutation",
+"rank": null,
+"pool": "outside top 12",
+"patient": "LN-06A2",
+"subgroup": "kras_g12c"
+},
+{
+"nct_id": "NCT06244771",
+"title": "A Study Evaluating FMC-376 in Participants With KRAS G12C Mutated Solid Tumors",
+"rank": null,
+"pool": "outside top 12",
+"patient": "LN-06A2",
+"subgroup": "kras_g12c"
+},
+{
+"nct_id": "NCT06412198",
+"title": "A Multicenter Phase 1b/2 Study of Adagrasib, Cetuximab, and Cemiplimab for Metastatic Colorectal Cancer Harboring KRAS G12C Mutations",
+"rank": null,
+"pool": "outside top 12",
+"patient": "LN-06A2",
+"subgroup": "kras_g12c"
+},
+{
+"nct_id": "NCT07124884",
+"title": "5-fluorouracil Plus Panitumumab (Anti-EGFR) and Sotorasib (KRAS G12C Inhibitor) in First-line Treatment of Patients Non-eligible for a Doublet/Triplet Chemotherapy With Advanced Unresectab",
+"rank": null,
+"pool": "outside top 12",
+"patient": "LN-06A2",
+"subgroup": "kras_g12c"
+},
+{
+"nct_id": "NCT07581912",
+"title": "Neoadjuvant Treatment of Fulzerasib Plus Cetuximab N01 in KRAS G12C Mutated Locally Advanced Colorectal Cancer With or Without Resectable Metastases",
+"rank": null,
+"pool": "outside top 12",
+"patient": "LN-06A2",
+"subgroup": "kras_g12c"
+},
+{
+"nct_id": "NCT07814417",
+"title": "A Study of Olomorasib (LY3537982) in Participants With Advanced Colorectal Cancer and a KRAS G12C Mutation",
+"rank": null,
+"pool": "outside top 12",
+"patient": "LN-06A2",
+"subgroup": "kras_g12c"
+},
+{
+"nct_id": "NCT05288205",
+"title": "Phase 1/2a Study of JAB-21822 Plus JAB-3312 in Patients With Advanced Solid Tumors Harboring KRAS p.G12C Mutation",
+"rank": null,
+"pool": "outside top 12",
+"patient": "LN-AACE",
+"subgroup": "kras_g12c"
+},
+{
+"nct_id": "NCT06128551",
+"title": "Study of Elironrasib and Daraxonrasib as Monotherapies and Combination Therapy in Participants With Advanced KRAS G12C Mutant Solid Tumors",
+"rank": null,
+"pool": "outside top 12",
+"patient": "LN-AACE",
+"subgroup": "kras_g12c"
+},
+{
+"nct_id": "NCT06244771",
+"title": "A Study Evaluating FMC-376 in Participants With KRAS G12C Mutated Solid Tumors",
+"rank": null,
+"pool": "outside top 12",
+"patient": "LN-AACE",
+"subgroup": "kras_g12c"
+},
+{
+"nct_id": "NCT06412198",
+"title": "A Multicenter Phase 1b/2 Study of Adagrasib, Cetuximab, and Cemiplimab for Metastatic Colorectal Cancer Harboring KRAS G12C Mutations",
+"rank": null,
+"pool": "outside top 12",
+"patient": "LN-AACE",
+"subgroup": "kras_g12c"
+},
+{
+"nct_id": "NCT07124884",
+"title": "5-fluorouracil Plus Panitumumab (Anti-EGFR) and Sotorasib (KRAS G12C Inhibitor) in First-line Treatment of Patients Non-eligible for a Doublet/Triplet Chemotherapy With Advanced Unresectab",
+"rank": null,
+"pool": "outside top 12",
+"patient": "LN-AACE",
+"subgroup": "kras_g12c"
+},
+{
+"nct_id": "NCT07814417",
+"title": "A Study of Olomorasib (LY3537982) in Participants With Advanced Colorectal Cancer and a KRAS G12C Mutation",
+"rank": null,
+"pool": "outside top 12",
+"patient": "LN-AACE",
+"subgroup": "kras_g12c"
+},
+{
+"nct_id": "NCT05288205",
+"title": "Phase 1/2a Study of JAB-21822 Plus JAB-3312 in Patients With Advanced Solid Tumors Harboring KRAS p.G12C Mutation",
+"rank": null,
+"pool": "outside top 12",
+"patient": "LN-3509",
+"subgroup": "kras_g12c"
+},
+{
+"nct_id": "NCT06128551",
+"title": "Study of Elironrasib and Daraxonrasib as Monotherapies and Combination Therapy in Participants With Advanced KRAS G12C Mutant Solid Tumors",
+"rank": null,
+"pool": "outside top 12",
+"patient": "LN-3509",
+"subgroup": "kras_g12c"
+},
+{
+"nct_id": "NCT06244771",
+"title": "A Study Evaluating FMC-376 in Participants With KRAS G12C Mutated Solid Tumors",
+"rank": null,
+"pool": "outside top 12",
+"patient": "LN-3509",
+"subgroup": "kras_g12c"
+},
+{
+"nct_id": "NCT06252649",
+"title": "Study of Sotorasib, Panitumumab and FOLFIRI Versus FOLFIRI With or Without Bevacizumab-awwb in Treatment-naïve Participants With Metastatic Colorectal Cancer With KRAS p.G12C Mutation",
+"rank": null,
+"pool": "outside top 12",
+"patient": "LN-3509",
+"subgroup": "kras_g12c"
+},
+{
+"nct_id": "NCT06412198",
+"title": "A Multicenter Phase 1b/2 Study of Adagrasib, Cetuximab, and Cemiplimab for Metastatic Colorectal Cancer Harboring KRAS G12C Mutations",
+"rank": null,
+"pool": "outside top 12",
+"patient": "LN-3509",
+"subgroup": "kras_g12c"
+},
+{
+"nct_id": "NCT07124884",
+"title": "5-fluorouracil Plus Panitumumab (Anti-EGFR) and Sotorasib (KRAS G12C Inhibitor) in First-line Treatment of Patients Non-eligible for a Doublet/Triplet Chemotherapy With Advanced Unresectab",
+"rank": null,
+"pool": "outside top 12",
+"patient": "LN-3509",
+"subgroup": "kras_g12c"
+},
+{
+"nct_id": "NCT07814417",
+"title": "A Study of Olomorasib (LY3537982) in Participants With Advanced Colorectal Cancer and a KRAS G12C Mutation",
+"rank": null,
+"pool": "outside top 12",
+"patient": "LN-3509",
+"subgroup": "kras_g12c"
+},
+{
+"nct_id": "NCT05275374",
+"title": "XP-102 and XP-102 in Combination With Trametinib in Advanced Solid Tumor Patients With a BRAF V600 Mutation",
+"rank": null,
+"pool": "outside top 12",
+"patient": "LN-4E65",
+"subgroup": "braf_v600e"
+}
+],
+"n_misses": 259,
+"per_patient": [
+{
+"patient": "LN-06A2",
+"subgroup": "kras_g12c",
+"n_golden": 8,
+"first_rank": 1,
+"rr": 1.0,
+"layers": {
+"auto": 8,
+"hand": 0
+},
+"recall@5": 0.4,
+"hit@5": true,
+"recall@12": 0.25,
+"hit@12": true,
+"hits": [
+{
+"nct_id": "NCT06252649",
+"rank": 1,
+"sim": 0.68,
+"kind": "inclusion"
+},
+{
+"nct_id": "NCT06128551",
+"rank": 5,
+"sim": 0.6702,
+"kind": "inclusion"
+}
+],
+"n_hits": 2,
+"n_misses": 6
+},
+{
+"patient": "LN-AACE",
+"subgroup": "kras_g12c",
+"n_golden": 8,
+"first_rank": 1,
+"rr": 1.0,
+"layers": {
+"auto": 8,
+"hand": 0
+},
+"recall@5": 0.2,
+"hit@5": true,
+"recall@12": 0.25,
+"hit@12": true,
+"hits": [
+{
+"nct_id": "NCT06252649",
+"rank": 1,
+"sim": 0.6986,
+"kind": "inclusion"
+},
+{
+"nct_id": "NCT07581912",
+"rank": 9,
+"sim": 0.7099,
+"kind": "inclusion"
+}
+],
+"n_hits": 2,
+"n_misses": 6
+},
+{
+"patient": "LN-3509",
+"subgroup": "kras_g12c",
+"n_golden": 8,
+"first_rank": 4,
+"rr": 0.25,
+"layers": {
+"auto": 8,
+"hand": 0
+},
+"recall@5": 0.2,
+"hit@5": true,
+"recall@12": 0.125,
+"hit@12": true,
+"hits": [
+{
+"nct_id": "NCT07581912",
+"rank": 4,
+"sim": 0.6975,
+"kind": "inclusion"
+}
+],
+"n_hits": 1,
+"n_misses": 7
+},
+{
+"patient": "LN-4E65",
+"subgroup": "braf_v600e",
+"n_golden": 12,
+"first_rank": null,
+"rr": 0.0,
+"layers": {
+"auto": 12,
+"hand": 0
+},
+"recall@5": 0.0,
+"hit@5": false,
+"recall@12": 0.0,
+"hit@12": false,
+"hits": [],
+"n_hits": 0,
+"n_misses": 12
+},
+{
+"patient": "LN-D681",
+"subgroup": "braf_v600e",
+"n_golden": 12,
+"first_rank": null,
+"rr": 0.0,
+"layers": {
+"auto": 12,
+"hand": 0
+},
+"recall@5": 0.0,
+"hit@5": false,
+"recall@12": 0.0,
+"hit@12": false,
+"hits": [],
+"n_hits": 0,
+"n_misses": 12
+},
+{
+"patient": "LN-4F99",
+"subgroup": "braf_v600e",
+"n_golden": 12,
+"first_rank": null,
+"rr": 0.0,
+"layers": {
+"auto": 12,
+"hand": 0
+},
+"recall@5": 0.0,
+"hit@5": false,
+"recall@12": 0.0,
+"hit@12": false,
+"hits": [],
+"n_hits": 0,
+"n_misses": 12
+},
+{
+"patient": "LN-36F5",
+"subgroup": "braf_v600e",
+"n_golden": 12,
+"first_rank": null,
+"rr": 0.0,
+"layers": {
+"auto": 12,
+"hand": 0
+},
+"recall@5": 0.0,
+"hit@5": false,
+"recall@12": 0.0,
+"hit@12": false,
+"hits": [],
+"n_hits": 0,
+"n_misses": 12
+},
+{
+"patient": "LN-A721",
+"subgroup": "braf_v600e",
+"n_golden": 12,
+"first_rank": null,
+"rr": 0.0,
+"layers": {
+"auto": 12,
+"hand": 0
+},
+"recall@5": 0.0,
+"hit@5": false,
+"recall@12": 0.0,
+"hit@12": false,
+"hits": [],
+"n_hits": 0,
+"n_misses": 12
+},
+{
+"patient": "LN-AC88",
+"subgroup": "msi_h",
+"n_golden": 23,
+"first_rank": null,
+"rr": 0.0,
+"layers": {
+"auto": 23,
+"hand": 0
+},
+"recall@5": 0.0,
+"hit@5": false,
+"recall@12": 0.0,
+"hit@12": false,
+"hits": [],
+"n_hits": 0,
+"n_misses": 23
+},
+{
+"patient": "LN-639C",
+"subgroup": "her2_amp",
+"n_golden": 21,
+"first_rank": null,
+"rr": 0.0,
+"layers": {
+"auto": 21,
+"hand": 0
+},
+"recall@5": 0.0,
+"hit@5": false,
+"recall@12": 0.0,
+"hit@12": false,
+"hits": [],
+"n_hits": 0,
+"n_misses": 21
+},
+{
+"patient": "LN-36AE",
+"subgroup": "her2_amp",
+"n_golden": 21,
+"first_rank": null,
+"rr": 0.0,
+"layers": {
+"auto": 21,
+"hand": 0
+},
+"recall@5": 0.0,
+"hit@5": false,
+"recall@12": 0.0,
+"hit@12": false,
+"hits": [],
+"n_hits": 0,
+"n_misses": 21
+},
+{
+"patient": "LN-4F59",
+"subgroup": "her2_amp",
+"n_golden": 21,
+"first_rank": null,
+"rr": 0.0,
+"layers": {
+"auto": 21,
+"hand": 0
+},
+"recall@5": 0.0,
+"hit@5": false,
+"recall@12": 0.0,
+"hit@12": false,
+"hits": [],
+"n_hits": 0,
+"n_misses": 21
+},
+{
+"patient": "LN-F7E9",
+"subgroup": "ras_wt",
+"n_golden": 9,
+"first_rank": 6,
+"rr": 0.167,
+"layers": {
+"auto": 9,
+"hand": 0
+},
+"recall@5": 0.0,
+"hit@5": false,
+"recall@12": 0.222,
+"hit@12": true,
+"hits": [
+{
+"nct_id": "NCT05962502",
+"rank": 6,
+"sim": 0.6679,
+"kind": "inclusion"
+},
+{
+"nct_id": "NCT07490119",
+"rank": 9,
+"sim": 0.6783,
+"kind": "inclusion"
+}
+],
+"n_hits": 2,
+"n_misses": 7
+},
+{
+"patient": "LN-C2EC",
+"subgroup": "ras_wt",
+"n_golden": 9,
+"first_rank": null,
+"rr": 0.0,
+"layers": {
+"auto": 9,
+"hand": 0
+},
+"recall@5": 0.0,
+"hit@5": false,
+"recall@12": 0.0,
+"hit@12": false,
+"hits": [],
+"n_hits": 0,
+"n_misses": 9
+},
+{
+"patient": "LN-1C10",
+"subgroup": "ras_wt",
+"n_golden": 9,
+"first_rank": 10,
+"rr": 0.1,
+"layers": {
+"auto": 9,
+"hand": 0
+},
+"recall@5": 0.0,
+"hit@5": false,
+"recall@12": 0.111,
+"hit@12": true,
+"hits": [
+{
+"nct_id": "NCT07490119",
+"rank": 10,
+"sim": 0.6749,
+"kind": "inclusion"
+}
+],
+"n_hits": 1,
+"n_misses": 8
+},
+{
+"patient": "LN-A515",
+"subgroup": "ras_wt",
+"n_golden": 9,
+"first_rank": 7,
+"rr": 0.143,
+"layers": {
+"auto": 9,
+"hand": 0
+},
+"recall@5": 0.0,
+"hit@5": false,
+"recall@12": 0.111,
+"hit@12": true,
+"hits": [
+{
+"nct_id": "NCT07490119",
+"rank": 7,
+"sim": 0.6775,
+"kind": "inclusion"
+}
+],
+"n_hits": 1,
+"n_misses": 8
+},
+{
+"patient": "LN-0B9E",
+"subgroup": "kras_mut",
+"n_golden": 0,
+"first_rank": null,
+"rr": 0.0,
+"layers": {
+"auto": 0,
+"hand": 0
+},
+"recall@5": null,
+"hit@5": null,
+"recall@12": null,
+"hit@12": null,
+"hits": [],
+"n_hits": 0,
+"n_misses": 0
+},
+{
+"patient": "LN-37D6",
+"subgroup": "kras_mut",
+"n_golden": 0,
+"first_rank": null,
+"rr": 0.0,
+"layers": {
+"auto": 0,
+"hand": 0
+},
+"recall@5": null,
+"hit@5": null,
+"recall@12": null,
+"hit@12": null,
+"hits": [],
+"n_hits": 0,
+"n_misses": 0
+},
+{
+"patient": "LN-C19B",
+"subgroup": "ras_wt",
+"n_golden": 9,
+"first_rank": null,
+"rr": 0.0,
+"layers": {
+"auto": 9,
+"hand": 0
+},
+"recall@5": 0.0,
+"hit@5": false,
+"recall@12": 0.0,
+"hit@12": false,
+"hits": [],
+"n_hits": 0,
+"n_misses": 9
+},
+{
+"patient": "LN-A2AF",
+"subgroup": "mcrc",
+"n_golden": 0,
+"first_rank": null,
+"rr": 0.0,
+"layers": {
+"auto": 0,
+"hand": 0
+},
+"recall@5": null,
+"hit@5": null,
+"recall@12": null,
+"hit@12": null,
+"hits": [],
+"n_hits": 0,
+"n_misses": 0
+},
+{
+"patient": "LN-0C63",
+"subgroup": "kras_mut",
+"n_golden": 0,
+"first_rank": null,
+"rr": 0.0,
+"layers": {
+"auto": 0,
+"hand": 0
+},
+"recall@5": null,
+"hit@5": null,
+"recall@12": null,
+"hit@12": null,
+"hits": [],
+"n_hits": 0,
+"n_misses": 0
+},
+{
+"patient": "LN-F9A1",
+"subgroup": "braf_v600e",
+"n_golden": 12,
+"first_rank": 6,
+"rr": 0.167,
+"layers": {
+"auto": 12,
+"hand": 0
+},
+"recall@5": 0.0,
+"hit@5": false,
+"recall@12": 0.25,
+"hit@12": true,
+"hits": [
+{
+"nct_id": "NCT05275374",
+"rank": 6,
+"sim": 0.7353,
+"kind": "inclusion"
+},
+{
+"nct_id": "NCT07790510",
+"rank": 9,
+"sim": 0.7223,
+"kind": "inclusion"
+},
+{
+"nct_id": "NCT07789210",
+"rank": 12,
+"sim": 0.7648,
+"kind": "inclusion"
+}
+],
+"n_hits": 3,
+"n_misses": 9
+},
+{
+"patient": "LN-F9DC",
+"subgroup": "kras_mut",
+"n_golden": 0,
+"first_rank": null,
+"rr": 0.0,
+"layers": {
+"auto": 0,
+"hand": 0
+},
+"recall@5": null,
+"hit@5": null,
+"recall@12": null,
+"hit@12": null,
+"hits": [],
+"n_hits": 0,
+"n_misses": 0
+},
+{
+"patient": "LN-CB2B",
+"subgroup": "braf_v600e",
+"n_golden": 12,
+"first_rank": 8,
+"rr": 0.125,
+"layers": {
+"auto": 12,
+"hand": 0
+},
+"recall@5": 0.0,
+"hit@5": false,
+"recall@12": 0.083,
+"hit@12": true,
+"hits": [
+{
+"nct_id": "NCT07789210",
+"rank": 8,
+"sim": 0.7196,
+"kind": "inclusion"
+}
+],
+"n_hits": 1,
+"n_misses": 11
+},
+{
+"patient": "LN-0021",
+"subgroup": "kras_mut",
+"n_golden": 0,
+"first_rank": null,
+"rr": 0.0,
+"layers": {
+"auto": 0,
+"hand": 0
+},
+"recall@5": null,
+"hit@5": null,
+"recall@12": null,
+"hit@12": null,
+"hits": [],
+"n_hits": 0,
+"n_misses": 0
+},
+{
+"patient": "LN-0EF4",
+"subgroup": "ras_wt",
+"n_golden": 9,
+"first_rank": 12,
+"rr": 0.083,
+"layers": {
+"auto": 9,
+"hand": 0
+},
+"recall@5": 0.0,
+"hit@5": false,
+"recall@12": 0.111,
+"hit@12": true,
+"hits": [
+{
+"nct_id": "NCT06440902",
+"rank": 12,
+"sim": 0.6932,
+"kind": "exclusion"
+}
+],
+"n_hits": 1,
+"n_misses": 8
+},
+{
+"patient": "LN-22C9",
+"subgroup": "kras_mut",
+"n_golden": 0,
+"first_rank": null,
+"rr": 0.0,
+"layers": {
+"auto": 0,
+"hand": 0
+},
+"recall@5": null,
+"hit@5": null,
+"recall@12": null,
+"hit@12": null,
+"hits": [],
+"n_hits": 0,
+"n_misses": 0
+},
+{
+"patient": "LN-0A4E",
+"subgroup": "kras_mut",
+"n_golden": 0,
+"first_rank": null,
+"rr": 0.0,
+"layers": {
+"auto": 0,
+"hand": 0
+},
+"recall@5": null,
+"hit@5": null,
+"recall@12": null,
+"hit@12": null,
+"hits": [],
+"n_hits": 0,
+"n_misses": 0
+},
+{
+"patient": "LN-7AA4",
+"subgroup": "ras_wt",
+"n_golden": 9,
+"first_rank": null,
+"rr": 0.0,
+"layers": {
+"auto": 9,
+"hand": 0
+},
+"recall@5": 0.0,
+"hit@5": false,
+"recall@12": 0.0,
+"hit@12": false,
+"hits": [],
+"n_hits": 0,
+"n_misses": 9
+},
+{
+"patient": "LN-024E",
+"subgroup": "ras_wt",
+"n_golden": 9,
+"first_rank": null,
+"rr": 0.0,
+"layers": {
+"auto": 9,
+"hand": 0
+},
+"recall@5": 0.0,
+"hit@5": false,
+"recall@12": 0.0,
+"hit@12": false,
+"hits": [],
+"n_hits": 0,
+"n_misses": 9
+},
+{
+"patient": "LN-A3ED",
+"subgroup": "ras_wt",
+"n_golden": 9,
+"first_rank": 6,
+"rr": 0.167,
+"layers": {
+"auto": 9,
+"hand": 0
+},
+"recall@5": 0.0,
+"hit@5": false,
+"recall@12": 0.222,
+"hit@12": true,
+"hits": [
+{
+"nct_id": "NCT05962502",
+"rank": 6,
+"sim": 0.6426,
+"kind": "exclusion"
+},
+{
+"nct_id": "NCT07490119",
+"rank": 8,
+"sim": 0.6904,
+"kind": "inclusion"
+}
+],
+"n_hits": 2,
+"n_misses": 7
+},
+{
+"patient": "LN-B067",
+"subgroup": "kras_mut",
+"n_golden": 0,
+"first_rank": null,
+"rr": 0.0,
+"layers": {
+"auto": 0,
+"hand": 0
+},
+"recall@5": null,
+"hit@5": null,
+"recall@12": null,
+"hit@12": null,
+"hits": [],
+"n_hits": 0,
+"n_misses": 0
+},
+{
+"patient": "LN-7E78",
+"subgroup": "kras_mut",
+"n_golden": 0,
+"first_rank": null,
+"rr": 0.0,
+"layers": {
+"auto": 0,
+"hand": 0
+},
+"recall@5": null,
+"hit@5": null,
+"recall@12": null,
+"hit@12": null,
+"hits": [],
+"n_hits": 0,
+"n_misses": 0
+},
+{
+"patient": "LN-DFBE",
+"subgroup": "kras_mut",
+"n_golden": 0,
+"first_rank": null,
+"rr": 0.0,
+"layers": {
+"auto": 0,
+"hand": 0
+},
+"recall@5": null,
+"hit@5": null,
+"recall@12": null,
+"hit@12": null,
+"hits": [],
+"n_hits": 0,
+"n_misses": 0
+},
+{
+"patient": "LN-A980",
+"subgroup": "kras_mut",
+"n_golden": 0,
+"first_rank": null,
+"rr": 0.0,
+"layers": {
+"auto": 0,
+"hand": 0
+},
+"recall@5": null,
+"hit@5": null,
+"recall@12": null,
+"hit@12": null,
+"hits": [],
+"n_hits": 0,
+"n_misses": 0
+},
+{
+"patient": "LN-5D93",
+"subgroup": "kras_mut",
+"n_golden": 0,
+"first_rank": null,
+"rr": 0.0,
+"layers": {
+"auto": 0,
+"hand": 0
+},
+"recall@5": null,
+"hit@5": null,
+"recall@12": null,
+"hit@12": null,
+"hits": [],
+"n_hits": 0,
+"n_misses": 0
+}
+]
+},
+"gate": {
+"metric": "recall@12",
+"previous": 0.075,
+"current": 0.075,
+"threshold": 0.05,
+"status": "ok"
+},
+"schedules": [
+{
+"id": "eval-retrieval",
+"name": "Golden-set retrieval evaluation",
+"what": "Recall@10/20/40 of the bge-m3 → IRIS shortlist against the golden pairs; fails the export on a drop of more than 0.05 versus the previous run",
+"cadence": "daily",
+"cron": "0 2 * * *",
+"target": "make eval",
+"also_on": [
+"lana/patient.py",
+"lana/embed.py",
+"pipeline/build_trial_segments.py",
+"pipeline/embed_trials.py"
+],
+"last_run": "2026-10-18T01:32:59+07:00",
+"last_detail": {
+"mode": "snapshot",
+"n_queries": 23,
+"n_pairs": 275,
+"recall@5": 0.035,
+"hit@5": 0.13,
+"recall@12": 0.075,
+"hit@12": 0.435,
+"mrr": 0.139,
+"status": "ok"
+},
+"next_run": "2026-10-18T02:00+07:00",
+"status": "ok"
+},
+{
+"id": "registry-refresh",
+"name": "Registry refresh + re-embed",
+"what": "Re-fetch recruiting colorectal trials from ClinicalTrials.gov, re-chunk, re-embed, reload IRIS, then evaluate",
+"cadence": "weekly",
+"cron": "0 1 * * 0",
+"target": "make data embed eval",
+"also_on": [],
+"last_run": null,
+"last_detail": null,
+"next_run": "2026-10-25T01:00+07:00",
+"status": "never run"
+},
+{
+"id": "export",
+"name": "Demo export + match timing",
+"what": "Run the engine on the 36 demo patients, record each match time, write web/data",
+"cadence": "after every embed or train",
+"cron": null,
+"target": "make export",
+"also_on": [
+"data/processed/*",
+"data/models/*"
+],
+"last_run": "2026-10-17T21:05:28+07:00",
+"last_detail": {
+"status": "ok"
+},
+"next_run": null,
+"status": "ok"
+},
+{
+"id": "parity",
+"name": "Evaluator parity",
+"what": "Browser evaluator equals Python evaluator on every exported criterion",
+"cadence": "every commit",
+"cron": null,
+"target": "node tests/parity.mjs",
+"also_on": [
+"lana/evaluator.py",
+"web/js/evaluator.js"
+],
+"last_run": null,
+"last_detail": null,
+"next_run": null,
+"status": "never run"
+},
+{
+"id": "retrain",
+"name": "Retrain Model A and Model B",
+"what": "Trial-fit model on TREC, biomarker completion on the real cohorts, then evaluate",
+"cadence": "monthly",
+"cron": "0 3 1 * *",
+"target": "make train eval",
+"also_on": [],
+"last_run": null,
+"last_detail": null,
+"next_run": "2026-11-01T03:00+07:00",
+"status": "never run"
+}
+],
+"runs": [
+{
+"ts": "2026-10-18T01:29:37+07:00",
+"kind": "eval",
+"mode": "snapshot",
+"n_queries": 23,
+"n_pairs": 275,
+"recall@5": 0.035,
+"hit@5": 0.13,
+"recall@12": 0.075,
+"hit@12": 0.435,
+"mrr": 0.139,
+"status": "ok"
+},
+{
+"ts": "2026-10-18T01:32:59+07:00",
+"kind": "eval",
+"mode": "snapshot",
+"n_queries": 23,
+"n_pairs": 275,
+"recall@5": 0.035,
+"hit@5": 0.13,
+"recall@12": 0.075,
+"hit@12": 0.435,
+"mrr": 0.139,
+"status": "ok"
+}
+],
+"matched": [
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-06A2",
+"ms": 896,
+"shortlist": 40,
+"verdicts": {
+"ready": 1,
+"provisional": 9,
+"blocked": 30
+},
+"top": "NCT06252649"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-AACE",
+"ms": 709,
+"shortlist": 40,
+"verdicts": {
+"ready": 4,
+"provisional": 4,
+"blocked": 32
+},
+"top": "NCT06252649"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-3509",
+"ms": 582,
+"shortlist": 40,
+"verdicts": {
+"ready": 1,
+"provisional": 2,
+"blocked": 37
+},
+"top": "NCT04516681"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-4E65",
+"ms": 609,
+"shortlist": 40,
+"verdicts": {
+"ready": 2,
+"provisional": 8,
+"blocked": 30
+},
+"top": "NCT06555003"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-D681",
+"ms": 559,
+"shortlist": 40,
+"verdicts": {
+"ready": 1,
+"provisional": 8,
+"blocked": 31
+},
+"top": "NCT04516681"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-4F99",
+"ms": 656,
+"shortlist": 40,
+"verdicts": {
+"ready": 3,
+"provisional": 11,
+"blocked": 26
+},
+"top": "NCT06131840"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-36F5",
+"ms": 904,
+"shortlist": 40,
+"verdicts": {
+"ready": 1,
+"provisional": 4,
+"blocked": 35
+},
+"top": "NCT06300463"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-A721",
+"ms": 648,
+"shortlist": 40,
+"verdicts": {
+"ready": 0,
+"provisional": 5,
+"blocked": 35
+},
+"top": "NCT06555003"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-AC88",
+"ms": 579,
+"shortlist": 40,
+"verdicts": {
+"ready": 1,
+"provisional": 2,
+"blocked": 37
+},
+"top": "NCT06555003"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-639C",
+"ms": 697,
+"shortlist": 40,
+"verdicts": {
+"ready": 1,
+"provisional": 18,
+"blocked": 21
+},
+"top": "NCT07789210"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-36AE",
+"ms": 637,
+"shortlist": 40,
+"verdicts": {
+"ready": 3,
+"provisional": 20,
+"blocked": 17
+},
+"top": "NCT04516681"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-4F59",
+"ms": 553,
+"shortlist": 40,
+"verdicts": {
+"ready": 2,
+"provisional": 21,
+"blocked": 17
+},
+"top": "NCT07581912"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-F7E9",
+"ms": 690,
+"shortlist": 40,
+"verdicts": {
+"ready": 1,
+"provisional": 8,
+"blocked": 31
+},
+"top": "NCT04516681"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-C2EC",
+"ms": 585,
+"shortlist": 40,
+"verdicts": {
+"ready": 4,
+"provisional": 23,
+"blocked": 13
+},
+"top": "NCT07389265"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-1C10",
+"ms": 541,
+"shortlist": 40,
+"verdicts": {
+"ready": 2,
+"provisional": 11,
+"blocked": 27
+},
+"top": "NCT06555003"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-A515",
+"ms": 568,
+"shortlist": 40,
+"verdicts": {
+"ready": 2,
+"provisional": 5,
+"blocked": 33
+},
+"top": "NCT06555003"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-0B9E",
+"ms": 868,
+"shortlist": 40,
+"verdicts": {
+"ready": 3,
+"provisional": 8,
+"blocked": 29
+},
+"top": "NCT04516681"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-37D6",
+"ms": 805,
+"shortlist": 40,
+"verdicts": {
+"ready": 2,
+"provisional": 9,
+"blocked": 29
+},
+"top": "NCT04516681"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-C19B",
+"ms": 1402,
+"shortlist": 40,
+"verdicts": {
+"ready": 1,
+"provisional": 25,
+"blocked": 14
+},
+"top": "NCT06555003"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-A2AF",
+"ms": 815,
+"shortlist": 40,
+"verdicts": {
+"ready": 1,
+"provisional": 14,
+"blocked": 25
+},
+"top": "NCT05759728"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-0C63",
+"ms": 613,
+"shortlist": 40,
+"verdicts": {
+"ready": 0,
+"provisional": 3,
+"blocked": 37
+},
+"top": "NCT07729605"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-F9A1",
+"ms": 766,
+"shortlist": 40,
+"verdicts": {
+"ready": 0,
+"provisional": 12,
+"blocked": 28
+},
+"top": "NCT06763029"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-F9DC",
+"ms": 894,
+"shortlist": 40,
+"verdicts": {
+"ready": 0,
+"provisional": 3,
+"blocked": 37
+},
+"top": "NCT04547166"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-CB2B",
+"ms": 655,
+"shortlist": 40,
+"verdicts": {
+"ready": 2,
+"provisional": 4,
+"blocked": 34
+},
+"top": "NCT04516681"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-0021",
+"ms": 549,
+"shortlist": 40,
+"verdicts": {
+"ready": 4,
+"provisional": 6,
+"blocked": 30
+},
+"top": "NCT04516681"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-0EF4",
+"ms": 625,
+"shortlist": 40,
+"verdicts": {
+"ready": 3,
+"provisional": 15,
+"blocked": 22
+},
+"top": "NCT06555003"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-22C9",
+"ms": 619,
+"shortlist": 40,
+"verdicts": {
+"ready": 1,
+"provisional": 7,
+"blocked": 32
+},
+"top": "NCT04516681"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-0A4E",
+"ms": 585,
+"shortlist": 40,
+"verdicts": {
+"ready": 3,
+"provisional": 1,
+"blocked": 36
+},
+"top": "NCT04516681"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-7AA4",
+"ms": 893,
+"shortlist": 40,
+"verdicts": {
+"ready": 1,
+"provisional": 22,
+"blocked": 17
+},
+"top": "NCT06555003"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-024E",
+"ms": 641,
+"shortlist": 40,
+"verdicts": {
+"ready": 3,
+"provisional": 20,
+"blocked": 17
+},
+"top": "NCT06555003"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-A3ED",
+"ms": 850,
+"shortlist": 40,
+"verdicts": {
+"ready": 1,
+"provisional": 7,
+"blocked": 32
+},
+"top": "NCT04516681"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-B067",
+"ms": 561,
+"shortlist": 40,
+"verdicts": {
+"ready": 1,
+"provisional": 0,
+"blocked": 39
+},
+"top": "NCT04516681"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-7E78",
+"ms": 616,
+"shortlist": 40,
+"verdicts": {
+"ready": 3,
+"provisional": 4,
+"blocked": 33
+},
+"top": "NCT06555003"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-DFBE",
+"ms": 683,
+"shortlist": 40,
+"verdicts": {
+"ready": 1,
+"provisional": 4,
+"blocked": 35
+},
+"top": "NCT04516681"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-A980",
+"ms": 553,
+"shortlist": 40,
+"verdicts": {
+"ready": 1,
+"provisional": 5,
+"blocked": 34
+},
+"top": "NCT06858969"
+},
+{
+"ts": "2026-10-17T21:05:28+07:00",
+"kind": "export",
+"patient": "LN-5D93",
+"ms": 732,
+"shortlist": 40,
+"verdicts": {
+"ready": 2,
+"provisional": 9,
+"blocked": 29
+},
+"top": "NCT06555003"
+}
+],
+"matched_summary": {
+"n": 36,
+"patients": 36,
+"runs": 1,
+"median_ms": 644.5,
+"p95_ms": 896,
+"max_ms": 1402,
+"min_ms": 541,
+"by_kind": {
+"export": 36
+},
+"by_day": [
+{
+"day": "2026-10-17",
+"n": 36,
+"median_ms": 644.5,
+"max_ms": 1402
+}
+]
+}
+}

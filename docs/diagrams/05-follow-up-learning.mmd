@@ -1,0 +1,10 @@
+flowchart LR
+  subgraph H["Proposed hospital-local follow-up · not measured"]
+    M["Match snapshot<br/>Evidence, protocol / model versions, ranked candidates"]
+    F["Observed follow-up<br/>Referral, screening, enrolment<br/>Time, reason, pending / missing state"]
+    E["Self-evaluation<br/>Site / clinician outcomes<br/>Precision, recall, burden, subgroup errors"]
+    R["Offline RL candidate<br/>DEV training, held-out evaluation<br/>Clinical review before update"]
+    M --> F --> E --> R
+    R -. Reviewed retrieval / ranking / workflow updates .-> M
+  end
+  N["Enrolment does not establish treatment effectiveness.<br/>RL cannot override protocol eligibility rules."]

@@ -1,0 +1,12 @@
+numpy
+pandas
+pyarrow
+scikit-learn
+httpx
+torch
+sentence-transformers
+umap-learn
+fastapi
+uvicorn
+intersystems-irispython
+pytest>=8.0

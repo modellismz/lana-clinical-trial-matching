@@ -1,0 +1,14 @@
+Use case: infographic-diagram. Create one polished English architecture infographic for LANA, matching the attached two REFERENCE IMAGES' visual family. They are style/brand references, NOT edit targets. Use a white canvas, dark navy headings, vivid blue arrows, turquoise thin outlines and pale cyan panels, recognizable service logos, generous whitespace, large highly readable typography. Wide 16:9 landscape. This is a proposed workflow, not a report of clinical efficacy.
+Title exactly: "LANA | Follow-up & Learning"
+Subtitle exactly: "Track outcomes → Evaluate → Improve the next match"
+A small top-right pill exactly: "PLANNED WORKFLOW"
+A large rounded hospital boundary labelled "HOSPITAL-LOCAL FOLLOW-UP & LEARNING".
+Four large numbered panels across the middle, connected left to right with obvious arrows:
+1. "Match snapshot" — LANA graph/network logo like reference, bold "LANA"; two short lines: "Patient + protocol + model version" and "Ranked trials + supporting evidence".
+2. "Outcome follow-up" — clinician/hospital icon, then authentic InterSystems logo with "IRIS for Health"; three short lines: "Referral accepted?" "Screening passed?" "Enrolled? Record date + reason".
+3. "Self-evaluation" — authentic Langfuse logo and a smaller Laya logo (from reference), each clearly separate; three concise lines: "Compare with site-confirmed outcomes" "Audit errors and missing follow-up" "Laya: optional evidence check".
+4. "Offline RL" — authentic Google logo with label "Local MedGemma"; three short lines: "Improve retrieval / ranking policy" "Held-out test + clinician review" "Approve update before release".
+Below the row, draw one clear dashed return arrow FROM panel 4 back TO panel 1 labelled exactly "Reviewed ranking & workflow updates". Do not connect the return arrow to treatment decisions.
+A bottom full-width pale cyan bar with a lock icon and exact text: "Outcome evidence, evaluation and model updates stay under hospital control."
+A small readable footer exactly: "Proposed design · RL benefit not yet measured · Enrolment does not establish treatment effectiveness"
+Use logos to help explain each service, as in the reference images, not decorative unrelated badges. No extra metrics, no invented accuracy, no fake partnerships, no cloud services, no award badge, no tiny walls of text, no claim RL has already improved outcomes. Spell all text accurately; keep each logo legible. Do not copy the prior service architecture content; this image is specifically the four-step outcome-learning loop.

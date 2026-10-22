@@ -1,0 +1,352 @@
+{
+  "API_responses_replayed": 1330,
+  "all_API_attempts": 1330,
+  "analysis": {
+    "confusion": {
+      "LANA": [
+        [
+          196,
+          28,
+          8,
+          0
+        ],
+        [
+          25,
+          150,
+          26,
+          0
+        ],
+        [
+          19,
+          117,
+          96,
+          0
+        ]
+      ],
+      "LANA_original725": [
+        [
+          194,
+          25,
+          13,
+          0
+        ],
+        [
+          22,
+          128,
+          51,
+          0
+        ],
+        [
+          17,
+          100,
+          115,
+          0
+        ]
+      ],
+      "LANA_original725_source": [
+        [
+          192,
+          27,
+          13,
+          0
+        ],
+        [
+          22,
+          130,
+          49,
+          0
+        ],
+        [
+          17,
+          107,
+          108,
+          0
+        ]
+      ],
+      "LANA_source": [
+        [
+          196,
+          28,
+          8,
+          0
+        ],
+        [
+          25,
+          150,
+          26,
+          0
+        ],
+        [
+          19,
+          117,
+          96,
+          0
+        ]
+      ],
+      "gpt-5.6-terra": [
+        [
+          219,
+          11,
+          2,
+          0
+        ],
+        [
+          139,
+          61,
+          1,
+          0
+        ],
+        [
+          214,
+          14,
+          4,
+          0
+        ]
+      ],
+      "gpt-6-luna": [
+        [
+          230,
+          1,
+          1,
+          0
+        ],
+        [
+          189,
+          12,
+          0,
+          0
+        ],
+        [
+          223,
+          5,
+          4,
+          0
+        ]
+      ]
+    },
+    "label_sha256": "863af9a399873eb6a1cbf9adb669a3dcff77196a70559c6d0874da604aeb865d",
+    "n": 665,
+    "patients": 29,
+    "primary_bootstrap": {
+      "all_adjusted_lower_bounds_positive": true,
+      "cluster": "patient_id",
+      "clusters": 29,
+      "intervals": [
+        {
+          "adjusted_ci": [
+            0.22654806271823796,
+            0.3576597363083166
+          ],
+          "comparator": "gpt-6-luna",
+          "lower_above_zero": true,
+          "metric": "accuracy"
+        },
+        {
+          "adjusted_ci": [
+            0.3584016145839761,
+            0.49995281095723965
+          ],
+          "comparator": "gpt-6-luna",
+          "lower_above_zero": true,
+          "metric": "macro_f1"
+        },
+        {
+          "adjusted_ci": [
+            0.16641901931649328,
+            0.30634521954597616
+          ],
+          "comparator": "gpt-5.6-terra",
+          "lower_above_zero": true,
+          "metric": "accuracy"
+        },
+        {
+          "adjusted_ci": [
+            0.24619286204014462,
+            0.3951540066727427
+          ],
+          "comparator": "gpt-5.6-terra",
+          "lower_above_zero": true,
+          "metric": "macro_f1"
+        }
+      ],
+      "method": "Paired cluster percentile bootstrap; fixedthreeclasses; Bonferroni fourendpoints",
+      "replicates": 5000,
+      "seed": 20261026
+    },
+    "qualification": "Singlefrozen selectedpipeline; complete665humanjudged pairs from29syntheticquestionnaireprofiles. Classstratified contextqualified researchchallenge, not populationclinicalaccuracy, fullcorpusretrieval, colorectalvalidation, equalcompute foundationmodelcomparison, outcomeRL or whole-serviceOPEX. Extraarms/sourceablations descriptive, not readout/candidate selection. Eighttemplatecluster analysis is a sensitivity check, not an additional independent confirmation.",
+    "scoped_accuracy_F1_superiority_established": true,
+    "scores": {
+      "LANA": {
+        "accuracy": 0.6646616541353384,
+        "eligible_precision": 0.7384615384615385,
+        "eligible_recall": 0.41379310344827586,
+        "excluded_to_eligible": 26,
+        "false_eligible_rate": 0.07852193995381063,
+        "ineligible_to_eligible": 34,
+        "invalid_outputs": 0,
+        "macro_f1": 0.6552446415283941,
+        "n": 665,
+        "noneligible_pairs": 433
+      },
+      "LANA_original725": {
+        "accuracy": 0.6571428571428571,
+        "eligible_precision": 0.6424581005586593,
+        "eligible_recall": 0.4956896551724138,
+        "excluded_to_eligible": 51,
+        "false_eligible_rate": 0.14780600461893764,
+        "ineligible_to_eligible": 64,
+        "invalid_outputs": 0,
+        "macro_f1": 0.6526319865763411,
+        "n": 665,
+        "noneligible_pairs": 433
+      },
+      "LANA_original725_source": {
+        "accuracy": 0.6466165413533834,
+        "eligible_precision": 0.6352941176470588,
+        "eligible_recall": 0.46551724137931033,
+        "excluded_to_eligible": 49,
+        "false_eligible_rate": 0.14318706697459585,
+        "ineligible_to_eligible": 62,
+        "invalid_outputs": 0,
+        "macro_f1": 0.641942289296683,
+        "n": 665,
+        "noneligible_pairs": 433
+      },
+      "LANA_source": {
+        "accuracy": 0.6646616541353384,
+        "eligible_precision": 0.7384615384615385,
+        "eligible_recall": 0.41379310344827586,
+        "excluded_to_eligible": 26,
+        "false_eligible_rate": 0.07852193995381063,
+        "ineligible_to_eligible": 34,
+        "invalid_outputs": 0,
+        "macro_f1": 0.6552446415283941,
+        "n": 665,
+        "noneligible_pairs": 433
+      },
+      "gpt-5.6-terra": {
+        "accuracy": 0.4270676691729323,
+        "eligible_precision": 0.5714285714285714,
+        "eligible_recall": 0.017241379310344827,
+        "excluded_to_eligible": 1,
+        "false_eligible_rate": 0.006928406466512702,
+        "ineligible_to_eligible": 3,
+        "invalid_outputs": 0,
+        "macro_f1": 0.3344453435880676,
+        "n": 665,
+        "noneligible_pairs": 433
+      },
+      "gpt-6-luna": {
+        "accuracy": 0.3699248120300752,
+        "eligible_precision": 0.8,
+        "eligible_recall": 0.017241379310344827,
+        "excluded_to_eligible": 0,
+        "false_eligible_rate": 0.0023094688221709007,
+        "ineligible_to_eligible": 1,
+        "invalid_outputs": 0,
+        "macro_f1": 0.223220034943726,
+        "n": 665,
+        "noneligible_pairs": 433
+      }
+    },
+    "seal_manifest_sha256": "e6e5e6a8c9ba7256756b4028307f6d07a0f9823bd73082f54a0177d312d13f4f",
+    "strict_point_wins_both_comparators_both_metrics": true,
+    "template_cluster_sensitivity": {
+      "all_adjusted_lower_bounds_positive": true,
+      "cluster": "template",
+      "clusters": 8,
+      "intervals": [
+        {
+          "adjusted_ci": [
+            0.22156412793027452,
+            0.37500000000000006
+          ],
+          "comparator": "gpt-6-luna",
+          "lower_above_zero": true,
+          "metric": "accuracy"
+        },
+        {
+          "adjusted_ci": [
+            0.36987178525907133,
+            0.510241612914326
+          ],
+          "comparator": "gpt-6-luna",
+          "lower_above_zero": true,
+          "metric": "macro_f1"
+        },
+        {
+          "adjusted_ci": [
+            0.16138793759512943,
+            0.32398202376881
+          ],
+          "comparator": "gpt-5.6-terra",
+          "lower_above_zero": true,
+          "metric": "accuracy"
+        },
+        {
+          "adjusted_ci": [
+            0.24135544092225933,
+            0.415605540347926
+          ],
+          "comparator": "gpt-5.6-terra",
+          "lower_above_zero": true,
+          "metric": "macro_f1"
+        }
+      ],
+      "method": "Paired cluster percentile bootstrap; fixedthreeclasses; Bonferroni fourendpoints",
+      "replicates": 5000,
+      "seed": 20261026
+    },
+    "templates": 8
+  },
+  "api_cost": {
+    "gpt-5.6-terra": {
+      "all_attempts": 665,
+      "recorded_estimate_usd": 2.0471010000000036,
+      "scope": "Recorded API token-usage estimate at archived default-tier rates, not invoice",
+      "usd_per_1000_pair_decisions": 3.078347368421058
+    },
+    "gpt-6-luna": {
+      "all_attempts": 665,
+      "recorded_estimate_usd": 0.12513884999999997,
+      "scope": "Recorded API token-usage estimate at archived default-tier rates, not invoice",
+      "usd_per_1000_pair_decisions": 0.18817872180451123
+    }
+  },
+  "cost_scope_comparison": "Different local GPU electricity and API service scopes; no equal-scope savings ratio.",
+  "local_cost": {
+    "LANA": {
+      "actual_model_forward_calls": 2660,
+      "batch_seconds": 1177.2774839401245,
+      "gpu_energy": {
+        "coverage_fraction": 1.0,
+        "covered_seconds": 1177.2774839401245,
+        "kwh": 0.0704414651326716,
+        "requested_seconds": 1177.2774839401245
+      },
+      "scope": "Gross warm batch GPU electricity only; wrapper/state/serialization included. Model loading/switch, training/DEV/teacher, CPU/host/idle/hardware/operations excluded. Whole-serviceOPEX unmeasured.",
+      "tariff_usd_per_kwh_assumed": 0.15,
+      "usd_per_1000_pair_decisions": 0.015889052285565024
+    },
+    "LANA_original725": {
+      "actual_model_forward_calls": 2660,
+      "batch_seconds": 1176.9490144252777,
+      "gpu_energy": {
+        "coverage_fraction": 1.0,
+        "covered_seconds": 1176.9490144252777,
+        "kwh": 0.07118210742683762,
+        "requested_seconds": 1176.9490144252777
+      },
+      "scope": "Gross warm batch GPU electricity only; wrapper/state/serialization included. Model loading/switch, training/DEV/teacher, CPU/host/idle/hardware/operations excluded. Whole-serviceOPEX unmeasured.",
+      "tariff_usd_per_kwh_assumed": 0.15,
+      "usd_per_1000_pair_decisions": 0.016056114457181418
+    }
+  },
+  "n": 665,
+  "native_requests_replayed": 5320,
+  "passed_raw_replay": true,
+  "protocol_sha256": "c6cc9961877b7ce8fae6d47b05cd9a320e746933a0d4195620d55bce6f2567b5",
+  "qualification": "Singlefrozen selectedpipeline; complete665humanjudged pairs from29syntheticquestionnaireprofiles. Classstratified contextqualified researchchallenge, not populationclinicalaccuracy, fullcorpusretrieval, colorectalvalidation, equalcompute foundationmodelcomparison, outcomeRL or whole-serviceOPEX. Extraarms/sourceablations descriptive, not readout/candidate selection. Eighttemplatecluster analysis is a sensitivity check, not an additional independent confirmation.",
+  "raw_manifest_sha256": "e8d2c702235c82f43311091258c613647a50d775fc942d5926f8c0986a539f5a",
+  "whole_service_opex": null
+}

@@ -1,0 +1,135 @@
+{
+  "created_at": "2026-10-22T17:58:37.491094+00:00",
+  "status": "Publication asset manifest; generated cover / follow-up and user-selected original diagrams; actual UI captures",
+  "award": {
+    "placement": "3rd Place",
+    "event": "Siriraj × MIT Hacking Medicine 2026",
+    "source": "Placement reported by the project team"
+  },
+  "primary_asset_count": 11,
+  "assets": [
+    {
+      "id": "01-cover",
+      "title": "Cover",
+      "category": "Brand",
+      "file": "assets/01-cover.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "ed48fd71980ff8d8433f0018a8983a3cbfe1549c35754604bdfbd2f6ed41f320"
+    },
+    {
+      "id": "02-high-level",
+      "title": "High-level architecture",
+      "category": "Architecture",
+      "file": "assets/02-high-level.png",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "sha256": "7f416406bf79512c1995f0beee5af58b31587b5513d2987b30dcb7f52b1ef638"
+    },
+    {
+      "id": "03-service-architecture",
+      "title": "Service architecture",
+      "category": "Architecture",
+      "file": "assets/03-service-architecture.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "4b174f090ee5db2ac7e114b89a53d228b86f3bbf5bcc2fcb77b80f97c25fc0cb"
+    },
+    {
+      "id": "04-inference",
+      "title": "Inside one inference request",
+      "category": "Architecture",
+      "file": "assets/04-inference.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "eee1db497743a765c56c6747a69ada70a4a6c159b9b88bcead99144761955f0b"
+    },
+    {
+      "id": "05-follow-up-learning",
+      "title": "Follow-up & offline RL",
+      "category": "Architecture",
+      "file": "assets/05-follow-up-learning.png",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "sha256": "6ba223d4c14259bbee301a9adef1696a0759ec490605da38384e9823c6fb6e1b"
+    },
+    {
+      "id": "06-benchmark-quality-cost",
+      "title": "Quality & recorded cost",
+      "category": "Benchmark",
+      "file": "assets/06-benchmark-quality-cost.png",
+      "dimensions": [
+        3200,
+        1800
+      ],
+      "sha256": "cef9d5e9d3d71b633f7303337a18dbf8af3b89c385217bae1256212673cb4b96"
+    },
+    {
+      "id": "07-patient-map",
+      "title": "Patient map",
+      "category": "UI",
+      "file": "assets/07-patient-map.png",
+      "dimensions": [
+        1680,
+        1120
+      ],
+      "sha256": "88036e6aa5d5c5af0a4b94dca83408a571844e6ac2e9f1b283199163b330e9e1"
+    },
+    {
+      "id": "08-data-input",
+      "title": "Data input",
+      "category": "UI",
+      "file": "assets/08-data-input.png",
+      "dimensions": [
+        1680,
+        1120
+      ],
+      "sha256": "5580faf3c0d95d0d0493073eff3f645ac7355f87b17ddb332f13ea08d81c0655"
+    },
+    {
+      "id": "09-trial-match",
+      "title": "Trial matching",
+      "category": "UI",
+      "file": "assets/09-trial-match.png",
+      "dimensions": [
+        1680,
+        1120
+      ],
+      "sha256": "61ebfbedebb9d9d6c83c8bc696bc9405578fe7f90c567b67dd12d1fca3c54e1b"
+    },
+    {
+      "id": "10-evidence",
+      "title": "Evidence & provenance",
+      "category": "UI",
+      "file": "assets/10-evidence.png",
+      "dimensions": [
+        1680,
+        1120
+      ],
+      "sha256": "6ddf75ca2d79e6a2d46008b69b7c33c6743b2953ab4de1c0ce29a10a6406dc77"
+    },
+    {
+      "id": "11-referral",
+      "title": "Referral draft",
+      "category": "UI",
+      "file": "assets/11-referral.png",
+      "dimensions": [
+        1680,
+        1120
+      ],
+      "sha256": "22bcebefdde584f49ce45ed1880a69b220898a03003a46186143ae9207922e56"
+    }
+  ],
+  "cost_scope": "Local warm-batch GPU electricity vs hosted API token estimates; not equal-scope OPEX",
+  "cover_tool": "built-in imagegen"
+}

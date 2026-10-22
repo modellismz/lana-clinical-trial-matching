@@ -1,0 +1,12 @@
+# InterSystems IRIS (community edition) with Vector Search: the MVP's data layer.
+# Unique container name and ports so it runs beside other IRIS containers on the same machine.
+# The image's default entrypoint post-start hook fails on IRIS 2026.1, so start /iris-main directly.
+services:
+  iris:
+    image: intersystemsdc/iris-community:latest
+    container_name: lana-mvp-iris
+    entrypoint: ["/iris-main"]
+    command: ["--ISCAgent", "false"]
+    ports:
+      - "127.0.0.1:1974:1972"    # superserver (Python driver)
+      - "127.0.0.1:52775:52773"  # management portal

@@ -1,0 +1,59 @@
+{
+  "registered_utc": "2026-10-21T14:10:16.402403+00:00",
+  "scope": "Prospective analysis only; does not admit inference or choose a candidate",
+  "n": 665,
+  "patients": 29,
+  "templates": 8,
+  "trial_IDs": 650,
+  "input_sha256": "6098792fb425e58607453fe50365c6345150fcd29fad02e69283ae11f138bf1a",
+  "label_sha256": "863af9a399873eb6a1cbf9adb669a3dcff77196a70559c6d0874da604aeb865d",
+  "split_manifest_sha256": "39e51f39f4a964b6d644e2b8c1c63bb2e7910bc4c0fe14f539e62b393c237a58",
+  "code_sha256": {
+    "trec_2023_confirmation_metrics.py": "98ec588d7c0092b2bdb2fee1057ebc2f70d598f96ab8496245de83a55ecc4eda",
+    "test_trec_2023_confirmation_metrics.py": "cb863eab883bfbb2266e9c62c9253676edf047fde46c575fd46e536781de7e22",
+    "trec_confirmation_metrics.py": "3384473e51de505ce8cbffb1d817de507dbadd16b51595aa4e25dbbc8f8a86f1"
+  },
+  "primary_arm": "LANA",
+  "comparators": [
+    "gpt-6-luna",
+    "gpt-5.6-terra"
+  ],
+  "candidate_policy": "One final local pipeline/checkpoint/readout frozen after separate DEV admission, before any665pair model inference. No confirmation-dependent candidate, prompt, threshold, readout, subset or retry choice.",
+  "baseline_policy": "Same complete canonical clinical fields and SYSTEM as local source view; original direct high effort,8192outputcap,defaulttier,storeFalse. All API outputs/attempts retained; no correctness retry.",
+  "seal_policy": "Commit every665prediction for all named arms and raw inference manifest/protocol/checkpoint hashes before separate raw audit and target join. Reject duplicates, missing cases, extra gold fields and altered hashes. Invalid outputs remain errors in denominator.",
+  "primary_endpoints": [
+    "Accuracy difference LANA minus Luna",
+    "Macro-F1 difference LANA minus Luna",
+    "Accuracy difference LANA minus Terra",
+    "Macro-F1 difference LANA minus Terra"
+  ],
+  "statistical_method": {
+    "primary": "Paired patient-cluster percentile bootstrap",
+    "replicates": 5000,
+    "seed": 20261026,
+    "familywise_alpha": 0.05,
+    "simultaneous_endpoints": 4,
+    "adjustment": "Bonferroni; each interval98.75percent; percentile tails0.00625 and0.99375",
+    "class_policy": "Always three classes; invalid predictions add false negatives and remain in denominator, no complete-case filter",
+    "scoped_success": "Strict point wins on accuracy and macro-F1 against both comparators, and all four adjusted patient-cluster lower bounds strictly above zero.",
+    "sensitivity": "Separately report paired eight-template cluster bootstrap with same5000replicates/seed/four-endpoint adjustment. Sensitivity only; does not supply a second independent study or replace primary intervals."
+  },
+  "secondary_outputs": [
+    "All3x4confusion matrices including invalid column",
+    "False eligible count/rate on all noneligible pairs",
+    "Excluded-to-eligible count",
+    "Eligible precision and recall",
+    "Complete-case count and invalid count",
+    "Prespecified source/original-adapter ablations if named in eventual execution protocol; descriptive only"
+  ],
+  "cost_policy": "Separately scope actual local measured energy/runtime and recorded API token-usage estimates. No old cached2forward cost reused for uncached4forward execution; whole-serviceOPEX remains unmeasured unless separately evidenced.",
+  "qualifications": [
+    "Public synthetic, class-stratified, context-qualified judged-pair challenge; not populationclinicalaccuracy or full-corpus retrieval",
+    "Questionnaire inputs differ from old free-text training notes; pretraining or semantic independence is not established",
+    "Different compute budgets and local task adaptation versus direct API controls; not proof that MedGemma foundation model is stronger",
+    "No colorectal-specific clinical benefit, outcome reinforcement learning or platform-wide sovereignty certification follows"
+  ],
+  "confirmation_inference_admitted": false,
+  "confirmation_model_calls": 0,
+  "teacher_distillation_admitted": false
+}

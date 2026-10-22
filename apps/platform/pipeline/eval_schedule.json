@@ -1,0 +1,55 @@
+{
+  "timezone": "Asia/Bangkok",
+  "jobs": [
+    {
+      "id": "eval-retrieval",
+      "name": "Golden-set retrieval evaluation",
+      "what": "Recall@10/20/40 of the bge-m3 → IRIS shortlist against the golden pairs; fails the export on a drop of more than 0.05 versus the previous run",
+      "cadence": "daily",
+      "cron": "0 2 * * *",
+      "target": "make eval",
+      "also_on": ["lana/patient.py", "lana/embed.py", "pipeline/build_trial_segments.py", "pipeline/embed_trials.py"],
+      "log": "eval"
+    },
+    {
+      "id": "registry-refresh",
+      "name": "Registry refresh + re-embed",
+      "what": "Re-fetch recruiting colorectal trials from ClinicalTrials.gov, re-chunk, re-embed, reload IRIS, then evaluate",
+      "cadence": "weekly",
+      "cron": "0 1 * * 0",
+      "target": "make data embed eval",
+      "also_on": [],
+      "log": "embed"
+    },
+    {
+      "id": "export",
+      "name": "Demo export + match timing",
+      "what": "Run the engine on the 36 demo patients, record each match time, write web/data",
+      "cadence": "after every embed or train",
+      "cron": null,
+      "target": "make export",
+      "also_on": ["data/processed/*", "data/models/*"],
+      "log": "export"
+    },
+    {
+      "id": "parity",
+      "name": "Evaluator parity",
+      "what": "Browser evaluator equals Python evaluator on every exported criterion",
+      "cadence": "every commit",
+      "cron": null,
+      "target": "node tests/parity.mjs",
+      "also_on": ["lana/evaluator.py", "web/js/evaluator.js"],
+      "log": "parity"
+    },
+    {
+      "id": "retrain",
+      "name": "Retrain Model A and Model B",
+      "what": "Trial-fit model on TREC, biomarker completion on the real cohorts, then evaluate",
+      "cadence": "monthly",
+      "cron": "0 3 1 * *",
+      "target": "make train eval",
+      "also_on": [],
+      "log": "train"
+    }
+  ]
+}
