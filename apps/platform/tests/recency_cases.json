@@ -1,0 +1,240 @@
+[
+  {
+    "name": "lab-missing",
+    "kind": "lab",
+    "date": null,
+    "expected": "met"
+  },
+  {
+    "name": "lab-empty",
+    "kind": "lab",
+    "date": "",
+    "expected": "met"
+  },
+  {
+    "name": "lab-malformed",
+    "kind": "lab",
+    "date": "not-a-date",
+    "expected": "unknown"
+  },
+  {
+    "name": "lab-invalid-day",
+    "kind": "lab",
+    "date": "2026-02-30",
+    "expected": "unknown"
+  },
+  {
+    "name": "lab-invalid-leap-day",
+    "kind": "lab",
+    "date": "2026-02-29",
+    "expected": "unknown"
+  },
+  {
+    "name": "lab-future",
+    "kind": "lab",
+    "date": "2026-10-18",
+    "expected": "unknown"
+  },
+  {
+    "name": "lab-non-string",
+    "kind": "lab",
+    "date": 123,
+    "expected": "unknown"
+  },
+  {
+    "name": "lab-compact",
+    "kind": "lab",
+    "date": "20261017",
+    "expected": "unknown"
+  },
+  {
+    "name": "fitness-missing",
+    "kind": "fitness",
+    "date": null,
+    "expected": "met"
+  },
+  {
+    "name": "fitness-empty",
+    "kind": "fitness",
+    "date": "",
+    "expected": "met"
+  },
+  {
+    "name": "fitness-malformed",
+    "kind": "fitness",
+    "date": "not-a-date",
+    "expected": "unknown"
+  },
+  {
+    "name": "fitness-invalid-day",
+    "kind": "fitness",
+    "date": "2026-02-30",
+    "expected": "unknown"
+  },
+  {
+    "name": "fitness-invalid-leap-day",
+    "kind": "fitness",
+    "date": "2026-02-29",
+    "expected": "unknown"
+  },
+  {
+    "name": "fitness-future",
+    "kind": "fitness",
+    "date": "2026-10-18",
+    "expected": "unknown"
+  },
+  {
+    "name": "fitness-non-string",
+    "kind": "fitness",
+    "date": 123,
+    "expected": "unknown"
+  },
+  {
+    "name": "fitness-compact",
+    "kind": "fitness",
+    "date": "20261017",
+    "expected": "unknown"
+  },
+  {
+    "name": "imaging-missing",
+    "kind": "imaging",
+    "date": null,
+    "expected": "met"
+  },
+  {
+    "name": "imaging-empty",
+    "kind": "imaging",
+    "date": "",
+    "expected": "met"
+  },
+  {
+    "name": "imaging-malformed",
+    "kind": "imaging",
+    "date": "not-a-date",
+    "expected": "unknown"
+  },
+  {
+    "name": "imaging-invalid-day",
+    "kind": "imaging",
+    "date": "2026-02-30",
+    "expected": "unknown"
+  },
+  {
+    "name": "imaging-invalid-leap-day",
+    "kind": "imaging",
+    "date": "2026-02-29",
+    "expected": "unknown"
+  },
+  {
+    "name": "imaging-future",
+    "kind": "imaging",
+    "date": "2026-10-18",
+    "expected": "unknown"
+  },
+  {
+    "name": "imaging-non-string",
+    "kind": "imaging",
+    "date": 123,
+    "expected": "unknown"
+  },
+  {
+    "name": "imaging-compact",
+    "kind": "imaging",
+    "date": "20261017",
+    "expected": "unknown"
+  },
+  {
+    "name": "absent-date-key",
+    "kind": "lab",
+    "omit_date": true,
+    "expected": "met"
+  },
+  {
+    "name": "undated-failing-value",
+    "kind": "lab",
+    "date": null,
+    "value": 0,
+    "expected": "not_met"
+  },
+  {
+    "name": "undated-exclusion",
+    "kind": "imaging",
+    "date": null,
+    "polarity": "exclude",
+    "expected": "not_met"
+  },
+  {
+    "name": "lab-boundary",
+    "kind": "lab",
+    "date": "2026-09-19",
+    "expected": "met"
+  },
+  {
+    "name": "lab-stale",
+    "kind": "lab",
+    "date": "2026-09-18",
+    "expected": "unknown"
+  },
+  {
+    "name": "fitness-boundary",
+    "kind": "fitness",
+    "date": "2026-09-19",
+    "expected": "met"
+  },
+  {
+    "name": "fitness-stale",
+    "kind": "fitness",
+    "date": "2026-09-18",
+    "expected": "unknown"
+  },
+  {
+    "name": "imaging-boundary",
+    "kind": "imaging",
+    "date": "2026-09-05",
+    "expected": "met"
+  },
+  {
+    "name": "imaging-stale",
+    "kind": "imaging",
+    "date": "2026-09-04",
+    "expected": "unknown"
+  },
+  {
+    "name": "today",
+    "kind": "lab",
+    "date": "2026-10-17",
+    "expected": "met"
+  },
+  {
+    "name": "valid-failing-value",
+    "kind": "lab",
+    "date": "2026-10-17",
+    "value": 0,
+    "expected": "not_met"
+  },
+  {
+    "name": "biomarker-no-date",
+    "kind": "biomarker",
+    "date": null,
+    "expected": "met"
+  },
+  {
+    "name": "pending-no-date",
+    "kind": "lab",
+    "date": null,
+    "status": "pending",
+    "expected": "unknown"
+  },
+  {
+    "name": "zero-date",
+    "kind": "lab",
+    "date": 0,
+    "expected": "unknown"
+  },
+  {
+    "name": "valid-year-zero-rejected",
+    "kind": "lab",
+    "date": "0000-10-17",
+    "expected": "unknown"
+  }
+]
