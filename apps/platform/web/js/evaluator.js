@@ -52,7 +52,23 @@ export function assess(c, facts) {
     };
   }
   const win = WINDOW[c.kind];
-  if (win && f.date) {
+  const observed = f.date;
+  if (win && observed !== null && observed !== undefined && observed !== '') {
+    let problem = null;
+    const parsed = typeof observed === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(observed)
+      ? new Date(observed + 'T00:00:00Z') : new Date(NaN);
+    // Reject impossible calendar dates that JavaScript would otherwise normalize.
+    if (!Number.isFinite(parsed.getTime()) || parsed.toISOString().slice(0, 10) !== observed || observed.startsWith('0000-')) {
+      problem = 'observation date is invalid';
+    } else if (parsed > REF_DATE) {
+      problem = 'observation date is in the future';
+    }
+    if (problem) return {
+      status: 'unknown',
+      reason: `${label}: ${problem}; recency cannot be verified`,
+      action: `Record a valid observation date for ${label}`,
+      evidence: evidence(name, f),
+    };
     const age = days(f.date);
     if (age > win) return { status: 'unknown', reason: `${label} is ${age} days old (window ${win})`, action: `Repeat ${label}`, evidence: evidence(name, f) };
   }

@@ -63,8 +63,26 @@ def assess(criterion: dict, facts: dict[str, dict], today: date = REF_DATE) -> d
             "evidence": _evidence(name, fact),
         }
     window = RECENCY_DAYS.get(criterion["kind"])
-    if window and fact.get("date"):
-        age = (today - date.fromisoformat(fact["date"])).days
+    observed = fact.get("date")
+    if window and observed is not None and observed != "":
+        problem = None
+        try:
+            parsed = date.fromisoformat(observed)
+            if parsed.isoformat() != observed:
+                raise ValueError("Expected YYYY-MM-DD")
+        except (TypeError, ValueError):
+            problem = "observation date is invalid"
+        else:
+            if parsed > today:
+                problem = "observation date is in the future"
+        if problem:
+            return {
+                "status": "unknown",
+                "reason": f"{label}: {problem}; recency cannot be verified",
+                "action": f"Record a valid observation date for {label}",
+                "evidence": _evidence(name, fact),
+            }
+        age = (today - parsed).days
         if age > window:
             return {
                 "status": "unknown",

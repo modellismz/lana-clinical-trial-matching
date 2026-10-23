@@ -1,5 +1,9 @@
 """Unit tests for the criteria compiler and the evaluator: the part of Lana that decides Met / Not met / Unknown."""
 from datetime import date
+import json
+from pathlib import Path
+
+import pytest
 
 from lana.criteria import compile_trial, split_criteria
 from lana.evaluator import assess, evaluate_trial
@@ -87,3 +91,19 @@ def test_multi_cohort_lines_go_to_reviewer():
 def test_creatinine_or_clearance_is_not_both():
     trial = {"nct_id": "NCT3", "min_age": None, "max_age": None, "eligibility_text": "Inclusion Criteria:\n* Creatinine <= ULN or creatinine clearance >= 80 mL/min"}
     assert not any(c["assessable"] and c["fact"] in ("crcl", "creatinine", "creatinine_uln") for c in compile_trial(trial))
+
+
+@pytest.mark.parametrize("case", json.loads((Path(__file__).with_name("recency_cases.json")).read_text()), ids=lambda c: c["name"])
+def test_recency_date_validation(case):
+    c = crit("anc", "ge", 1.5, kind=case["kind"], polarity=case.get("polarity", "require"))
+    f = fact(case.get("value", 3.0), status=case.get("status", "done"))
+    if case.get("omit_date"):
+        del f["date"]
+    else:
+        f["date"] = case["date"]
+    result = assess(c, {"anc": f})
+    assert result["status"] == case["expected"]
+    assert result["evidence"]["source"] == "REAL:test"
+    assert result["evidence"]["date"] == f.get("date")
+    if case["expected"] == "unknown":
+        assert result["reason"] and result["action"]
